@@ -66,7 +66,7 @@ export default function Incidents() {
                 data={incidents} // [1, 2, 3, 4]
                 style={styles.incidentList}
                 keyExtractor={incident => String(incident.id)}
-                showsVerticalScrollIndicator={true}
+                showsVerticalScrollIndicator={false}
                 onEndReached={loadIncidents} // Disparada quando o usuario chega no fim da lista
                 onEndReachedThreshold={0.2} // Quantos % o usuario precisa estar do fim da lista para chamar o onEndReached
                 renderItem={({ item: incident }) => (
