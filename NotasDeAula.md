@@ -327,7 +327,7 @@ Back-End não tem responsabilidade pela apresentação dos dados.
 
 ### Iniciando Projeto 
 
-npm - Executa um pacote externo sem a necessidade de instala-lo de forma global.
+npx - Executa um pacote externo sem a necessidade de instala-lo de forma global.
 
 Executar:
 
@@ -520,6 +520,11 @@ No React Native todo código é escrito em JavaScript, os SO's como IOS e Androi
 
 FrameWork para React Native, conjunto de bibliotecas para utilizar as funcionalidades nativas do celular.
 
+#### Instalação
+
+    npm install -g expo-cli
+
+
 #### Porque Utilizar o Expo?
 
 Sem o Expo precisamos do Android Studio para obter o SDK para o desenvolvimento em Android e do Xcode para obter o SDK para o desenvolvimento em IOS.
@@ -527,3 +532,86 @@ Sem o Expo precisamos do Android Studio para obter o SDK para o desenvolvimento 
 #### Utilizando o Expo
 
 Com o Expo se preocupamos apenas em escrever o código em JS e o Expo executa o código dentro do seu próprio aplicativo já todo configurado e com todas as API's nativas.
+
+### Iniciando Projeto 
+
+Executar:
+
+    expo init mobile
+
+        Choose: blank
+
+### Para rodar
+
+    yarn start
+
+### Conhecendo
+
+No React Native não temos as tags html como <div>, <h1>, <p> etc. Usamos as tags <View> e <Text>
+
+A estilização é feita pela tag style que pode receber um objeto JS contendo o stilo a ser apicado.
+
+O diplay: flex é utilizado em tudo no React Native por padrão.
+
+Não existe herança de estilos, Por exemplo não se consegue estilizar um texto que está dentro de uma View passando o color para a View, tem que criar um estilo para o texto.
+
+### Navegação com React Navigation
+
+Instalação:
+
+    npm install @react-navigation/native
+
+Instalando Dependências:
+
+    expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+#### StackNavigator
+
+Instalação:
+
+    npm install @react-navigation/stack
+
+    Ou
+
+    yarn add @react-navigation/stack
+
+
+### Expo Constants
+
+Usaremos para ter acesso ao tamanho da StatusBar do smartphone.
+
+Instalação:
+
+    expo install expo-constants
+
+Usando:
+
+    import Constants from 'expo-constants';
+
+
+### Email
+
+    expo install expo-mail-composer
+
+### WhatsApp
+
+Para abrir outras aplicações iremos utilizar o DeepLinking.
+
+    import { Linking } from 'react-native';
+
+     Linking.openURL(`whatsapp://send?phone=+55<telefoneNumber>&text=${message}`)
+
+### Axios
+
+    npm install axios
+
+### intl
+
+Para usarmos esta formatação no android precisaremos instalar:
+
+    npm install intl
+
+App.js
+
+    import 'intl'
+    import 'intl/locale-data/jsonp/pt-BR'
