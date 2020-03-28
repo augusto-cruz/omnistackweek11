@@ -295,16 +295,117 @@ Instalação:
     npm install cors
 
 
+### Validação com Celebrate
+
+Celebrate: Integra o Joi (Validação) com o Express.
+
+Instalação:
+
+    npm install celebrate
+
+Uso:
+
+    routes.post('/ongs', celebrate({
+        [Segments.BODY]: Joi.object().keys({
+            name: Joi.string().required(),
+            email: Joi.string().email(),
+            whatsapp: Joi.number().required().min(10).max(11),
+            city: Joi.string().required(),
+            uf: Joi.string().required().length(2)
+        })
+    }), OngController.create);
 
 
+### Testes JEST
+
+Instalação:
+
+    npm install jest -D
+
+    npx jest --init
+
+        Y
+        node
+        N
+        Y
+
+Irá ser criado o arquivo `jest.config.js`.
 
 
+Criar pasta tests na raiz e dentro unit e integration;
+Dentro de Unit adicionar o primeiro teste.
+
+Para rodar os teste:
+
+    npm test
+
+
+#### Teste de Integração
+
+Para os testes de integração iremos configurar outro banco de dados, para que os dados contidos nele não sejam alterados no ambiente de desenvolvimento.
+
+Instalar o cross-env para utilizarmos variaveis para definir qual conexão ao banco utilizar.
+
+Instalação:
+
+    npm install cross-env
+
+Uso:
+
+No `package.json`:
+
+    "test": "cross-env NODE_ENV=test jest"
+
+No `connection.js`:
+    
+    // Pegar variavel de ambiente
+    const config = process.env.NODE_ENV === 'test'
+        ? configuration.test : configuration.development
+
+    const connection = knex(config);
+
+#### SuperTest
+
+Irá fazer requisição a API.
+
+Instalação:
+
+    npm install supertest -D
+
+Se deixarmos a aplicação escutando na porta 3333 iremos deixar a aplicação rodando, para evitarmos isso:
+
+Criar arquivo `server.js` dentro da pasta `src`.
+
+Renomear arquivo `index.js` por `app.js`.
+
+No `package.json`:
+
+    "start": "nodemon src/server.js"
+
+No `app.js`:
+
+    Remover:
+
+        app.listen(3333);
+
+    Adicionar:
+
+        module.exports = app;
+
+
+No `server.js`:
+
+    const app = require('./app');
+
+    app.listen(3333);
+
+
+Agora o test irá utilizar o `app.js`, sem deixar a aplicação no ar.
 
 
 &nbsp;
 &nbsp;
 &nbsp;
-
 
 ## ReactJs
 
