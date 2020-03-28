@@ -402,6 +402,14 @@ No `server.js`:
 
 Agora o test irá utilizar o `app.js`, sem deixar a aplicação no ar.
 
+### Deploy
+
+Melhor opção para aplicações teste e pequena (grátis): Heroku
+(https://www.youtube.com/watch?v=-j7vLmBMsEU)
+
+Melhor opção para aplicações em produção: DigitalOcean 
+(https://www.youtube.com/watch?v=ICIz5dE3Xfg)
+
 
 &nbsp;
 &nbsp;
@@ -454,9 +462,6 @@ index.js
 Renderiza o App.js
 
 App.js
-
-
-
 
 
 ### Componentes
@@ -599,6 +604,9 @@ Usando:
     npm install axios
 
 
+### Deploy
+
+Melhor opção para aplicações teste e pequenas (grátis): Netlify
 
 
 &nbsp;
@@ -716,3 +724,18 @@ App.js
 
     import 'intl'
     import 'intl/locale-data/jsonp/pt-BR'
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Daqui pra frente ->>
+
+Estudar padrões de Código ESLint e Prettier
+
+Autenticação JWT
+
+Styled Components (ReactJs e React Native)
+
+
