@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { errors } = require('celebrate');
 const routes = require('./routes');
 
 // Instanciacao da Aplicacao
@@ -14,5 +15,7 @@ app.use(express.json());
 // Usando as rotas criadas
 app.use(routes);
 
-// Aplicacao escuta na porta 3333
-app.listen(3333);
+// Usa o erro do celebrate
+app.use(errors());
+
+module.exports = app;
